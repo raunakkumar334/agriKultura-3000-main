@@ -1,0 +1,547 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Updated Filipino Heritage Color Palette */
+  --filipino-earthy-green: #4A773C;
+  --filipino-rust-orange: #C45A00;
+  --filipino-neutral-sand: #F2EAD3;
+  --filipino-saging-leaf: #7A9D54;
+  --filipino-binhi-light: #D7E4C0;
+  --filipino-soil-brown: #5A3E36;
+  --filipino-warm-yellow: #F9C74F;
+  
+  /* Additional Filipino-inspired colors */
+  --filipino-rice-gold: #E6D08A;
+  --filipino-bamboo-green: #8FBC8F;
+  --filipino-earth-tan: #D2B48C;
+  --filipino-coconut-white: #F5F5DC;
+  --filipino-mahogany: #C04000;
+  --filipino-sage-green: #87A96B;
+  --filipino-forest-green: #355E3B;
+  
+  /* New Heritage Background Colors */
+  --filipino-light-beige: #FFF8E1;
+  --filipino-soft-green: #E8F5E9;
+  --filipino-rice-paper: #FEFBF3;
+  --filipino-warm-cream: #F9F6F0;
+  
+  /* Gamification Colors */
+  --filipino-quest-blue: #4A90E2;
+  --filipino-badge-gold: #FFD700;
+  --filipino-progress-green: #32CD32;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Updated Filipino Heritage Colors for Tailwind */
+  --color-filipino-earthy-green: var(--filipino-earthy-green);
+  --color-filipino-rust-orange: var(--filipino-rust-orange);
+  --color-filipino-neutral-sand: var(--filipino-neutral-sand);
+  --color-filipino-saging-leaf: var(--filipino-saging-leaf);
+  --color-filipino-binhi-light: var(--filipino-binhi-light);
+  --color-filipino-soil-brown: var(--filipino-soil-brown);
+  --color-filipino-warm-yellow: var(--filipino-warm-yellow);
+  --color-filipino-rice-gold: var(--filipino-rice-gold);
+  --color-filipino-bamboo-green: var(--filipino-bamboo-green);
+  --color-filipino-earth-tan: var(--filipino-earth-tan);
+  --color-filipino-coconut-white: var(--filipino-coconut-white);
+  --color-filipino-mahogany: var(--filipino-mahogany);
+  --color-filipino-sage-green: var(--filipino-sage-green);
+  --color-filipino-forest-green: var(--filipino-forest-green);
+  --color-filipino-quest-blue: var(--filipino-quest-blue);
+  --color-filipino-badge-gold: var(--filipino-badge-gold);
+  --color-filipino-progress-green: var(--filipino-progress-green);
+  
+  /* New Heritage Background Colors */
+  --color-filipino-light-beige: var(--filipino-light-beige);
+  --color-filipino-soft-green: var(--filipino-soft-green);
+  --color-filipino-rice-paper: var(--filipino-rice-paper);
+  --color-filipino-warm-cream: var(--filipino-warm-cream);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito', 'Inter', 'Segoe UI', sans-serif;
+  }
+}
+
+/* Filipino Heritage Pattern Backgrounds */
+@layer utilities {
+  /* New Heritage-Inspired Background - Main App Background */
+  .bg-filipino-heritage {
+    background: linear-gradient(135deg, #FFF8E1 0%, #F9F6F0 50%, #E8F5E9 100%);
+    position: relative;
+  }
+
+  .bg-filipino-heritage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(74, 119, 60, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(122, 157, 84, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 50% 90%, rgba(196, 90, 0, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Rice Paper Texture - Subtle and Cultural */
+  .bg-filipino-rice-paper {
+    background: #FEFBF3;
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(242, 234, 211, 0.4) 1px, transparent 0),
+      radial-gradient(circle at 3px 7px, rgba(215, 228, 192, 0.3) 1px, transparent 0);
+    background-size: 12px 12px, 8px 8px;
+  }
+  
+  /* Banig Weaving Pattern - More Subtle */
+  .bg-filipino-banig {
+    background: #F9F6F0;
+    background-image: 
+      linear-gradient(0deg, rgba(74, 119, 60, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(122, 157, 84, 0.04) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  /* Traditional Woven Pattern - Very Subtle */
+  .bg-filipino-woven-soft {
+    background: linear-gradient(135deg, #FFF8E1 0%, #E8F5E9 100%);
+    background-image: 
+      linear-gradient(45deg, rgba(74, 119, 60, 0.02) 25%, transparent 25%, transparent 75%, rgba(74, 119, 60, 0.02) 75%),
+      linear-gradient(-45deg, rgba(122, 157, 84, 0.02) 25%, transparent 25%, transparent 75%, rgba(122, 157, 84, 0.02) 75%);
+    background-size: 24px 24px;
+  }
+  
+  /* Keep existing patterns but make them more subtle */
+  .bg-filipino-rice-pattern {
+    background-image: radial-gradient(circle at 2px 2px, rgba(215, 228, 192, 0.2) 1px, transparent 1px);
+    background-size: 15px 15px;
+  }
+  
+  .bg-filipino-bamboo-texture {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        rgba(143, 188, 143, 0.06) 1px,
+        rgba(143, 188, 143, 0.06) 2px,
+        transparent 3px,
+        transparent 8px
+      );
+  }
+
+  .bg-baybayin-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(74, 119, 60, 0.03) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, rgba(196, 90, 0, 0.03) 2px, transparent 2px);
+    background-size: 30px 30px;
+  }
+
+  /* Warm Heritage Gradient */
+  .bg-filipino-warm-gradient {
+    background: linear-gradient(135deg, #FFF8E1 0%, #F2EAD3 30%, #E8F5E9 70%, #D7E4C0 100%);
+  }
+}
+
+/**
+ * Base typography with Filipino-inspired font styling
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      font-family: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      font-family: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      font-family: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      font-family: 'EB Garamond', 'Georgia', 'Times New Roman', serif;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+      font-family: 'Nunito', 'Inter', 'Segoe UI', sans-serif;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      font-family: 'Nunito', 'Inter', 'Segoe UI', sans-serif;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      font-family: 'Nunito', 'Inter', 'Segoe UI', sans-serif;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+      font-family: 'Nunito', 'Inter', 'Segoe UI', sans-serif;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Smooth organic shapes and curves */
+@layer utilities {
+  .organic-curve {
+    clip-path: ellipse(100% 100% at 50% 0%);
+  }
+  
+  .organic-wave {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  
+  .organic-leaf {
+    border-radius: 50% 0 50% 0;
+  }
+}
+
+/* Animation utilities */
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  /* Enhanced animations for crop cards */
+  .crop-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .crop-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Quest unlock animations */
+  .quest-unlock {
+    animation: questUnlock 0.8s ease-out;
+  }
+  
+  /* Badge earning celebration */
+  .badge-earned {
+    animation: badgeEarned 1s ease-out;
+  }
+  
+  /* NFT adoption success animation */
+  .nft-success {
+    animation: nftSuccess 1.2s ease-out;
+  }
+  
+  /* Floating elements */
+  .float-gentle {
+    animation: floatGentle 4s ease-in-out infinite;
+  }
+  
+  /* Pulse effect for important elements */
+  .pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes questUnlock {
+  0% {
+    transform: scale(0.5) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes badgeEarned {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes nftSuccess {
+  0% {
+    transform: translateY(20px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(74, 119, 60, 0.4);
+  }
+  50% { 
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(74, 119, 60, 0);
+  }
+}
+
+/* Badge collection styling */
+.badge-shelf {
+  background: linear-gradient(135deg, #F2EAD3 0%, #E6D08A 100%);
+  border: 2px solid #4A773C;
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+.badge-slot {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px dashed #4A773C;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.badge-slot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: #C45A00;
+  transform: scale(1.05);
+}
+
+/* Quest map styling */
+.quest-map {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(74, 119, 60, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(196, 90, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #F2EAD3 0%, #D7E4C0 100%);
+}
+
+.province-marker {
+  position: relative;
+  background: linear-gradient(135deg, #4A773C 0%, #7A9D54 100%);
+  border: 3px solid #F2EAD3;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.province-marker:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.province-marker.completed {
+  background: linear-gradient(135deg, #FFD700 0%, #F9C74F 100%);
+  border-color: #C45A00;
+}
+
+/* Confetti animation for celebrations */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #F9C74F;
+  animation: confetti-fall 3s linear infinite;
+}
+
+.confetti:nth-child(2n) {
+  background: #4A773C;
+  animation-delay: 0.5s;
+}
+
+.confetti:nth-child(3n) {
+  background: #C45A00;
+  animation-delay: 1s;
+}
